@@ -1,6 +1,6 @@
 # QlnsX 
 
-## Page 1: Login Page (View1)
+### Page 1: Login Page (View1)
 
 - User Input:
 
@@ -17,7 +17,8 @@ The user is promptly redirected to Page 3.
 
 Existing users are redirected to Page 2, where they set their password.
 - Password Submission:
-Users enter and submit their desired password.
+If users enter their exist password then they will redircet to page3 but can see the insurance data(blank erray).
+But if users enter and submit their desired password, then they will redirect to page3 but get error message.
 - Redirect to Page 3:
 Upon completion, users are redirected to Page 3.
 
@@ -25,3 +26,11 @@ Upon completion, users are redirected to Page 3.
 - Accessing Insurance Data:
 Page 3 leverages a GET request to the insurance API.
 Users can view a comprehensive list of insurance information, though some details may currently be unavailable (displaying an empty array).
+
+### API overview
+
+Usercreate: (images/usercreate_api.png)
+
+Useralreadyexist: (images/userexist.png)
+
+Insurance Auth: (images/insuranceapi.png)

@@ -29,8 +29,19 @@ Users can view a comprehensive list of insurance information, though some detail
 
 ### API overview
 
-Usercreate: (images/usercreate_api.png)
+Usercreate: 
+<div align="center">
+  <img width="1470" alt="create_user" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/5d6ba347-acd6-4fc0-80a9-cd544be8392a">
+</div>
 
-Useralreadyexist: (images/userexist.png)
+Useralreadyexist: 
+<div align="center">
+  <img width="1470" alt="use_exist" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/766eb281-4b4d-439c-9a4f-d62dfb8f6b89">
+</div>
 
-Insurance Auth: (images/insuranceapi.png)
+Insurance Auth: 
+<div align="center">
+  <img width="1470" alt="insurance_api" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/c3969e20-02b6-435f-9875-bb5bf6e3f5d6">
+</div>
+
+

@@ -27,6 +27,24 @@ Upon completion, users are redirected to Page 3.
 Page 3 leverages a GET request to the insurance API.
 Users can view a comprehensive list of insurance information, though some details may currently be unavailable (displaying an empty array).
 
+### All three view Images
+
+View1:
+<div align="center">
+  <img width="961" alt="view1" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/106eaa45-23ec-434c-8392-e3e9ed17a29d">
+</div>
+
+View2:
+<div align="center">
+  <img width="961" alt="view2" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/eb8f1ee0-5519-4cd2-b05b-90d30aeb6fef">
+</div>
+
+View3:
+<div align="center">
+  <img width="961" alt="view3" src="https://github.com/Dayasuvagiya/hello-qlnsx/assets/130157117/fc552921-04f6-4480-a6e5-6e1a6e6a82e0">
+</div>
+
+
 ### API overview
 
 Usercreate: 

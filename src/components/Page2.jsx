@@ -1,30 +1,30 @@
-import React from 'react'
-import { useState } from 'react'
-import axios from 'axios'
+// Page2.jsx
+import React, { useState } from 'react';
+import Page3 from './Page3';
 
 const Page2 = (props) => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-console.log({email, password})
+  const [password, setPassword] = useState('');
+  const [userSubmittedPassword, setUserSubmittedPassword] = useState(false);
 
-const handleEmail = (event) => {
-  setEmail(event.target.value)
-}
-const handlePassword = (event) => {
-    setPassword(event.target.value)
-}
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmitPassword = () => {
+    setUserSubmittedPassword(true);
+  };
 
   return (
-   
     <div>
       <h1>QlsnX</h1>
-      Username: <input value={props.email} onChange={handleEmail} type='text'></input>
-      Password: <input value={password} onChange={handlePassword} type='text'></input>
+      Username: <input value={props.email} readOnly type='text' />
+      Password: <input value={password} onChange={handlePassword} type='password' />
       <div>
-        <button>Continue</button>
+        <button onClick={handleSubmitPassword}>Continue</button>
       </div>
+      {userSubmittedPassword && <Page3 email={props.email} password={password} />}
     </div>
-  )
+  );
 }
 
-export default Page2
+export default Page2;

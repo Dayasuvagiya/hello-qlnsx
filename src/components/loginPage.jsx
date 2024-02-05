@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import Page2 from './page2'
+import Page3 from './Page3'
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
@@ -15,19 +16,19 @@ const handleEmail = (event) => {
 }
 
 const handleApi = () => {
-    const randomThreeDigitNumber = Math.floor(Math.random() * 900) + 100;
-
+// POST request
   axios.post('http://api.qinsx.de/user', { 
     username: email,
     password: 'xyz',
   })
+    // Handle the response data
     .then(result => {
         console.log(result.data)
-        console.log(randomThreeDigitNumber)
         setUserstatus('Create')
         setPassword('xyz')
         alert('User is not exist and created redirect to insurance page')
     })
+    // Handle errors
     .catch(err => {
         console.log(err)
         setUserstatus('Present')
@@ -40,7 +41,12 @@ const handleApi = () => {
          {userstatus === 'None' && (
         <div>    
         <h1>QlsnX</h1>
-          <label>Username:</label><input value={email} onChange={handleEmail} type='text'></input>
+          <label>Username:</label>
+          <input 
+            value={email} 
+            onChange={handleEmail} 
+            placeholder="email"
+            type='text'></input>
         <div>
           <button onClick={handleApi}>Continue</button>
         </div>

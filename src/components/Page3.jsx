@@ -1,29 +1,45 @@
-import React from 'react'
-import { useState } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Page3= (props) => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-console.log({email, password})
+const Page3 = (props) => {
+  const [apiData, setApiData] = useState(null);
 
-const handleEmail = (event) => {
-  setEmail(event.target.value)
-}
-const handlePassword = (event) => {
-    setPassword(event.target.value)
-}
+  useEffect(() => {
+    const username = props.email;
+    const password = props.password;
+
+    // credentials for basic authentication
+    const basicAuth = btoa(`${username}:${password}`);
+
+    // GET request
+    axios.get('http://api.qinsx.de/insurance', {
+      headers: {
+        Authorization: `Basic ${basicAuth}`,
+      },
+    })
+      .then(response => {
+        // Handle the response data
+        console.log(response.data);
+        setApiData(response.data);
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error fetching data:', error);
+      });
+  }, [props.email, props.password]);
+
 
   return (
     <div>
       <h1>QlsnX</h1>
-      Username: <input value={email} onChange={handleEmail} type='text'></input>
-      Password: <input value={password} onChange={handlePassword} type='text'></input>
-      <div>
-        <button>Continue</button>
-      </div>
+      <h2>API Data:</h2>
+      {apiData ? (
+        <pre>{JSON.stringify(apiData, null, 2)}</pre>
+      ) : (
+        <p>Refresh page ans try again</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Page3 ;
+export default Page3;

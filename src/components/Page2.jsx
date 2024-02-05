@@ -16,15 +16,20 @@ const Page2 = (props) => {
 
   return (
     <div>
-      <h1>QlsnX</h1>
-      Username: <input value={props.email} readOnly type='text' />
-      Password: <input value={password} onChange={handlePassword} type='password' />
-      <div>
-        <button onClick={handleSubmitPassword}>Continue</button>
-      </div>
-      {userSubmittedPassword && <Page3 email={props.email} password={password} />}
+      {userSubmittedPassword === false && (
+        <div>
+          <h1 className='logo'>QlsnX</h1>
+          <input value={props.email} className='inputField' type='text' placeholder='email' />
+          <input value={password} onChange={handlePassword} className='inputField' type='password' placeholder='password' required />
+          <div>
+            <button className='button' onClick={handleSubmitPassword}>Continue</button>
+          </div>
+        </div>
+      )}
+
+          {userSubmittedPassword && <Page3 email={props.email} password={password} />}
     </div>
-  );
+      );
 }
 
-export default Page2;
+      export default Page2;

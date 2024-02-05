@@ -30,13 +30,13 @@ const Page3 = (props) => {
 
 
   return (
-    <div>
+    <div className='insurancePage'>
       <h1>QlsnX</h1>
       <h2>API Data:</h2>
       {apiData ? (
         <pre>{JSON.stringify(apiData, null, 2)}</pre>
       ) : (
-        <p>Refresh page ans try again</p>
+        <p>Refresh page and try again</p>
       )}
     </div>
   );

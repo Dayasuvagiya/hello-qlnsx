@@ -3,11 +3,14 @@ import { useState } from 'react'
 import axios from 'axios'
 import Page2 from './page2'
 import Page3 from './Page3'
+import './LoginPage.css' ;
+
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [userstatus, setUserstatus] = useState('None')
+    const [emailvalid, setEmailValid] = useState(false)
 
 console.log({email, password})
 
@@ -17,6 +20,10 @@ const handleEmail = (event) => {
 
 const handleApi = () => {
 // POST request
+if(email === '') {
+  alert('Please enter email address');
+  return;
+}
   axios.post('http://api.qinsx.de/user', { 
     username: email,
     password: 'xyz',
@@ -33,22 +40,27 @@ const handleApi = () => {
         console.log(err)
         setUserstatus('Present')
         alert('User is exist redirect to ask password page')
-    })
-}
+    });
+  } 
+
 
   return (
-   <div>
+   <div className='MainPage'>
          {userstatus === 'None' && (
         <div>    
-        <h1>QlsnX</h1>
-          <label>Username:</label>
+        <h1 className='logo'>QlsnX</h1>
           <input 
             value={email} 
             onChange={handleEmail} 
             placeholder="email"
-            type='text'></input>
+            type='text'
+            className='inputField'
+            required></input>
         <div>
-          <button onClick={handleApi}>Continue</button>
+          <button 
+            className='button' 
+            onClick={handleApi}
+            >Continue</button>
         </div>
         </div>    
       )}
@@ -70,4 +82,4 @@ const handleApi = () => {
 
 
 
-export default LoginPage
+export default LoginPage;

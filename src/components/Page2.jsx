@@ -27,9 +27,9 @@ const Page2 = (props) => {
         </div>
       )}
 
-          {userSubmittedPassword && <Page3 email={props.email} password={password} />}
+      {userSubmittedPassword && <Page3 email={props.email} password={password} />}
     </div>
-      );
+  );
 }
 
-      export default Page2;
+export default Page2;
